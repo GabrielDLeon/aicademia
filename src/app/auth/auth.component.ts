@@ -1,24 +1,26 @@
 import { Component } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { SupabaseService } from '../supabase.service';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-auth',
-  imports: [],
+  imports: [ReactiveFormsModule],
   templateUrl: './auth.component.html',
   styleUrl: './auth.component.css',
 })
 export class AuthComponent {
   loading = false;
-
-  signInForm = this.formBuilder.group({
-    email: '',
-  });
+  signInForm;
 
   constructor(
     private readonly supabase: SupabaseService,
     private readonly formBuilder: FormBuilder
-  ) {}
+  ) {
+    this.signInForm = this.formBuilder.group({
+      email: '',
+    });
+  }
 
   async onSubmit(): Promise<void> {
     try {

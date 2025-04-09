@@ -1,3 +1,10 @@
+import ThemeController from "@/components/ui/theme-controller";
+
 export default function Footer() {
-  return "Header";
+  return (
+    <>
+      <span>Header</span>
+      <ThemeController />
+    </>
+  );
 }

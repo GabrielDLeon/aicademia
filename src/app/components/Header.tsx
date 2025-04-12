@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { Book, List, MagnifyingGlass, XCircle } from "@phosphor-icons/react";
+import LogoAicademia from "@/assets/icons/logo-text-purple.svg";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -13,13 +14,14 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Input } from "@/components/ui/input";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import Image from "next/image";
 
 export default function Header() {
     const [isSearchOpen, setIsSearchOpen] = useState(false);
 
     return (
-        <header className="sticky top-0 z-50 w-full border-b bg-background">
-            <div className="container mx-auto flex h-16 items-center justify-between px-4 md:px-6">
+        <header className="sticky top-0 z-50 w-full bg-card">
+            <div className="container mx-auto flex h-16 items-center justify-between">
                 <div className="flex items-center gap-2 md:gap-4">
                     <Sheet>
                         <SheetTrigger asChild>
@@ -42,74 +44,63 @@ export default function Header() {
                                     className="flex items-center gap-2 text-lg font-semibold"
                                 >
                                     <Book className="h-5 w-5" />
-                                    <span>Cursos</span>
+                                    <span>Courses</span>
                                 </Link>
                                 <Link href="#" className="text-sm">
-                                    Todos los cursos
+                                    All Courses
                                 </Link>
                                 <Link href="#" className="text-sm">
-                                    Categorías
+                                    Categories
                                 </Link>
                                 <Link href="#" className="text-sm">
-                                    Novedades
-                                </Link>
-                                <Link href="#" className="text-sm">
-                                    Populares
-                                </Link>
-                                <Link href="#" className="text-sm">
-                                    Instructores
-                                </Link>
-                                <Link href="#" className="text-sm">
-                                    Blog
+                                    Popular
                                 </Link>
                             </nav>
                         </SheetContent>
                     </Sheet>
                     <Link href="/" className="flex items-center gap-2">
-                        <Book className="size-8" />
-                        <span className="text-xl font-bold">CursosOnline</span>
+                        <Image
+                            src={LogoAicademia}
+                            alt="AICademia"
+                            className="size-45 fill-violet-400"
+                        />
+                        {/* <Book className="size-8" />
+                        <span className="text-xl font-bold">AICademia</span> */}
                     </Link>
+                    <div className="flex items-center mx-10 gap-6">
+                        <Link href="#" className="text-sm font-medium">
+                            All Courses
+                        </Link>
+                        <DropdownMenu>
+                            <DropdownMenuTrigger asChild>
+                                <Button
+                                    variant="link"
+                                    className="text-sm font-medium p-0"
+                                >
+                                    Categories
+                                </Button>
+                            </DropdownMenuTrigger>
+                            <DropdownMenuContent align="end">
+                                <DropdownMenuItem>
+                                    Programación
+                                </DropdownMenuItem>
+                                <DropdownMenuItem>Diseño</DropdownMenuItem>
+                                <DropdownMenuItem>Marketing</DropdownMenuItem>
+                                <DropdownMenuItem>Negocios</DropdownMenuItem>
+                                <DropdownMenuItem>Fotografía</DropdownMenuItem>
+                            </DropdownMenuContent>
+                        </DropdownMenu>
+                        <Link href="#" className="text-sm font-medium">
+                            Popular
+                        </Link>
+                    </div>
                 </div>
-                <nav className="hidden md:flex md:items-center md:gap-6">
-                    <Link href="#" className="text-sm font-medium">
-                        Todos los cursos
-                    </Link>
-                    <DropdownMenu>
-                        <DropdownMenuTrigger asChild>
-                            <Button
-                                variant="link"
-                                className="text-sm font-medium"
-                            >
-                                Categorías
-                            </Button>
-                        </DropdownMenuTrigger>
-                        <DropdownMenuContent align="end">
-                            <DropdownMenuItem>Programación</DropdownMenuItem>
-                            <DropdownMenuItem>Diseño</DropdownMenuItem>
-                            <DropdownMenuItem>Marketing</DropdownMenuItem>
-                            <DropdownMenuItem>Negocios</DropdownMenuItem>
-                            <DropdownMenuItem>Fotografía</DropdownMenuItem>
-                        </DropdownMenuContent>
-                    </DropdownMenu>
-                    <Link href="#" className="text-sm font-medium">
-                        Novedades
-                    </Link>
-                    <Link href="#" className="text-sm font-medium">
-                        Populares
-                    </Link>
-                    <Link href="#" className="text-sm font-medium">
-                        Instructores
-                    </Link>
-                    <Link href="#" className="text-sm font-medium">
-                        Blog
-                    </Link>
-                </nav>
                 <div className="flex items-center gap-2">
                     {isSearchOpen ? (
                         <div className="flex gap-2">
                             <Input
                                 type="search"
-                                placeholder="Buscar cursos..."
+                                placeholder="Search courses..."
                                 className="w-[200px] md:w-[300px]"
                             />
                             <Button
@@ -118,7 +109,7 @@ export default function Header() {
                                 onClick={() => setIsSearchOpen(false)}
                             >
                                 <XCircle className="size-5" />
-                                <span className="sr-only">Cerrar búsqueda</span>
+                                <span className="sr-only">Close Search</span>
                             </Button>
                         </div>
                     ) : (
@@ -128,7 +119,7 @@ export default function Header() {
                             onClick={() => setIsSearchOpen(true)}
                         >
                             <MagnifyingGlass className="size-5" />
-                            <span className="sr-only">Buscar</span>
+                            <span className="sr-only">Search</span>
                         </Button>
                     )}
                     <Button
@@ -136,9 +127,9 @@ export default function Header() {
                         size="sm"
                         className="hidden md:inline-flex"
                     >
-                        Iniciar sesión
+                        LogIn
                     </Button>
-                    <Button size="sm">Registrarse</Button>
+                    <Button size="sm">SignIn</Button>
                 </div>
             </div>
         </header>

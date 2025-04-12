@@ -6,7 +6,7 @@ export function PhosphorProvider({ children }: { children: React.ReactNode }) {
     return (
         <IconContext.Provider
             value={{
-                color: "#1FDFA7",
+                color: "#847ABF",
                 size: 32,
                 weight: "duotone",
                 mirrored: false,

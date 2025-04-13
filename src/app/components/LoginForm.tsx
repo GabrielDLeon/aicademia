@@ -15,7 +15,7 @@ export function LoginForm({
             className={cn("flex flex-col gap-6 items-center", className)}
             {...props}
         >
-            <Card className="overflow-hidden w-full max-w-xl">
+            <Card className="overflow-hidden w-full max-w-xl shadow-2xl shadow-primary/15">
                 <CardContent className="p-0 ">
                     <form className="p-6 md:p-8">
                         <div className="flex flex-col gap-6">
@@ -24,7 +24,8 @@ export function LoginForm({
                                     Welcome back
                                 </h1>
                                 <p className="text-balance text-muted-foreground">
-                                    Login to your Acme Inc account
+                                    Please sign in to continue your learning
+                                    journey
                                 </p>
                             </div>
                             <div className="grid gap-2">
@@ -41,14 +42,14 @@ export function LoginForm({
                                     <Label htmlFor="password">Password</Label>
                                     <a
                                         href="#"
-                                        className="ml-auto text-sm underline-offset-2 hover:underline"
+                                        className="ml-auto text-sm underline-offset-2 hover:underline hover:text-primary"
                                     >
                                         Forgot your password?
                                     </a>
                                 </div>
                                 <Input id="password" type="password" required />
                             </div>
-                            <Button type="submit" className="w-full">
+                            <Button type="submit" className="w-full text-md">
                                 Login
                             </Button>
                             <div className="relative text-center text-sm after:absolute after:inset-0 after:top-1/2 after:z-0 after:flex after:items-center after:border-t after:border-border">
@@ -104,7 +105,7 @@ export function LoginForm({
                                 Don&apos;t have an account?{" "}
                                 <a
                                     href="#"
-                                    className="underline underline-offset-4"
+                                    className="underline underline-offset-4 hover:text-primary"
                                 >
                                     Sign up
                                 </a>
@@ -119,10 +120,16 @@ export function LoginForm({
                     </div> */}
                 </CardContent>
             </Card>
-            <div className="text-balance text-center text-xs text-muted-foreground [&_a]:underline [&_a]:underline-offset-4 hover:[&_a]:text-primary">
+            <div className="text-balance text-center text-xs text-muted-foreground [&_a]:underline [&_a]:underline-offset-4">
                 By clicking continue, you agree to our{" "}
-                <a href="#">Terms of Service</a> and{" "}
-                <a href="#">Privacy Policy</a>.
+                <a href="#" className="hover:text-primary">
+                    Terms of Service
+                </a>{" "}
+                and{" "}
+                <a href="#" className="hover:text-primary">
+                    Privacy Policy
+                </a>
+                .
             </div>
         </div>
     );

@@ -24,7 +24,7 @@ export default function Home() {
     return (
         <div className="flex flex-col min-h-screen max-h-[1440px] bg-background">
             {/* Hero Section */}
-            <section className="flex-1 relative h-full py-12 md:py-24 lg:py-32 overflow-hidden bg-gradient-to-t from-background to-card ">
+            <section className="flex-1 relative h-full py-12 md:py-24 lg:py-32 overflow-hidden bg-gradient-to-t from-background to-card">
                 <div className="container mx-auto px-4 md:px-6 relative z-10">
                     <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
                         <div className="space-y-6">
@@ -49,10 +49,10 @@ export default function Home() {
                                     <Input
                                         type="search"
                                         placeholder="What do you want to learn?"
-                                        className="pl-10 pr-4 py-6 text-base rounded-full"
+                                        className="pl-10 pr-4 py-6 text-base"
                                     />
                                 </div>
-                                <Button size="lg" className="px-8 rounded-full">
+                                <Button size="lg" className="px-8">
                                     Explore Courses
                                 </Button>
                             </div>
@@ -71,7 +71,7 @@ export default function Home() {
                                 </div>
                             </div>
                         </div>
-                        <div className="relative h-[350px] lg:h-[500px] rounded-2xl overflow-hidden">
+                        <div className="relative h-[350px] lg:h-[500px] rounded-2xl overflow-hidden shadow-2xl shadow-primary/15">
                             <Image
                                 src={HeroImage}
                                 alt="Students learning together"

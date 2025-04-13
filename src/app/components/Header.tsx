@@ -15,7 +15,7 @@ import { Input } from "@/components/ui/input";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
 export default function Header() {
-    const [isSearchOpen, setIsSearchOpen] = useState(false);
+    const [isSearchOpen, setIsSearchOpen] = useState(true);
 
     return (
         <header className="sticky top-0 z-50 w-full bg-card">
@@ -59,7 +59,7 @@ export default function Header() {
                     <Link href="/" className="flex items-center gap-2">
                         <Logo className="bg-transparent text-primary size-45" />
                     </Link>
-                    <div className="flex items-center mx-10 gap-6">
+                    <div className="flex items-center gap-6">
                         <Link href="#" className="text-sm font-medium">
                             All Courses
                         </Link>
@@ -95,14 +95,14 @@ export default function Header() {
                                 placeholder="Search courses..."
                                 className="w-[200px] md:w-[300px]"
                             />
-                            <Button
+                            {/* <Button
                                 variant="ghost"
                                 size="icon"
                                 onClick={() => setIsSearchOpen(false)}
                             >
                                 <XCircle className="size-5" />
                                 <span className="sr-only">Close Search</span>
-                            </Button>
+                            </Button> */}
                         </div>
                     ) : (
                         <Button
@@ -114,14 +114,17 @@ export default function Header() {
                             <span className="sr-only">Search</span>
                         </Button>
                     )}
-                    <Button
-                        variant="outline"
-                        size="sm"
-                        className="hidden md:inline-flex"
-                    >
-                        LogIn
-                    </Button>
-                    <Button size="sm">SignIn</Button>
+                    <Link href="/login">
+                        <Button
+                            variant="outline"
+                            className="hidden md:inline-flex text-md"
+                        >
+                            Log In
+                        </Button>
+                    </Link>
+                    <Link href="/register">
+                        <Button className="text-md">Sign Up</Button>
+                    </Link>
                 </div>
             </div>
         </header>

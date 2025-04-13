@@ -3,8 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { Book, List, MagnifyingGlass, XCircle } from "@phosphor-icons/react";
-import LogoAicademia from "@/assets/icons/logo-text-purple.svg";
-
+import Logo from "@/assets/icons/Logo";
 import { Button } from "@/components/ui/button";
 import {
     DropdownMenu,
@@ -14,7 +13,6 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Input } from "@/components/ui/input";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import Image from "next/image";
 
 export default function Header() {
     const [isSearchOpen, setIsSearchOpen] = useState(false);
@@ -59,13 +57,7 @@ export default function Header() {
                         </SheetContent>
                     </Sheet>
                     <Link href="/" className="flex items-center gap-2">
-                        <Image
-                            src={LogoAicademia}
-                            alt="AICademia"
-                            className="size-45 fill-violet-400"
-                        />
-                        {/* <Book className="size-8" />
-                        <span className="text-xl font-bold">AICademia</span> */}
+                        <Logo className="bg-transparent text-primary size-45" />
                     </Link>
                     <div className="flex items-center mx-10 gap-6">
                         <Link href="#" className="text-sm font-medium">

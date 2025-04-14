@@ -56,7 +56,7 @@ const MobileMenu = () => (
 
 export default function Header() {
   return (
-    <header className="sticky top-0 z-50 w-full bg-card">
+    <header className="fixed top-0 z-50 w-full bg-card">
       <div className="container mx-auto px-4 md:px-0">
         <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between">
           {/* First row - Mobile only */}

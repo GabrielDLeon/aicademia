@@ -1,0 +1,62 @@
+[
+  {
+    "id": "1",
+    "title": "Introducción a la Programación Web",
+    "description": "Aprende los fundamentos de HTML, CSS y JavaScript para crear sitios web interactivos desde cero.",
+    "instructor": {
+      "name": "María González",
+      "avatar": "/placeholder.svg?height=40&width=40"
+    },
+    "price": 49.99,
+    "originalPrice": 99.99,
+    "rating": 4.7,
+    "category": "Desarrollo Web",
+    "level": "Principiante",
+    "duration": "8 horas"
+  },
+  {
+    "id": "2",
+    "title": "React.js Avanzado",
+    "description": "Domina React con hooks, context API, y patrones avanzados de desarrollo para aplicaciones modernas.",
+    "instructor": {
+      "name": "Carlos Rodríguez",
+      "avatar": "/placeholder.svg?height=40&width=40"
+    },
+    "price": 79.99,
+    "originalPrice": 129.99,
+    "rating": 4.9,
+    "category": "Desarrollo Frontend",
+    "level": "Avanzado",
+    "duration": "12 horas"
+  },
+  {
+    "id": "3",
+    "title": "Diseño UX/UI para Principiantes",
+    "description": "Aprende a crear interfaces de usuario atractivas y experiencias de usuario efectivas con herramientas modernas.",
+    "instructor": {
+      "name": "Ana Martínez",
+      "avatar": "/placeholder.svg?height=40&width=40"
+    },
+    "price": 59.99,
+    "originalPrice": 89.99,
+    "rating": 4.5,
+    "category": "Diseño",
+    "level": "Principiante",
+    "duration": "10 horas"
+  },
+  {
+    "id": "4",
+    "title": "Python para Ciencia de Datos",
+    "description": "Domina Python y sus bibliotecas principales para análisis de datos, visualización y machine learning.",
+    "instructor": {
+      "name": "Javier López",
+      "avatar": "/placeholder.svg?height=40&width=40"
+    },
+    "price": 69.99,
+    "originalPrice": 119.99,
+    "rating": 4.8,
+    "category": "Ciencia de Datos",
+    "level": "Intermedio",
+    "duration": "15 horas"
+  }
+]

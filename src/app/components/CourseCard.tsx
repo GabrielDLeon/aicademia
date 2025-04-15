@@ -2,14 +2,13 @@
 
 import cover from "@/assets/course-cover.webp";
 
-import { Star } from "@phosphor-icons/react";
+import { Clock, Star } from "@phosphor-icons/react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
-  CardDescription,
   CardFooter,
   CardHeader,
   CardTitle,
@@ -20,7 +19,7 @@ interface CourseCardProps {
   id: string;
   title: string;
   description: string;
-  image: string;
+  cover?: string;
   instructor: {
     name: string;
     avatar: string;
@@ -28,15 +27,14 @@ interface CourseCardProps {
   price: number;
   originalPrice?: number;
   rating: number;
-  category: string;
-  level: "Principiante" | "Intermedio" | "Avanzado";
+  level: "Beginner" | "Intermediate" | "Advanced";
   duration: string;
 }
 
 export default function CourseCard({
-  title = "Introducción a la Programación Web",
-  description = "Aprende los fundamentos de HTML, CSS y JavaScript para crear sitios web interactivos desde cero.",
-  image,
+  title = "Introduction to Web Programming",
+  description = "Learn the fundamentals of HTML, CSS, and JavaScript to create interactive websites from scratch.",
+  cover,
   instructor = {
     name: "María González",
     avatar: "/placeholder.svg?height=40&width=40",
@@ -44,9 +42,8 @@ export default function CourseCard({
   price = 49.99,
   originalPrice = 99.99,
   rating = 4.7,
-  category = "Desarrollo Web",
-  level = "Principiante",
-  duration = "8 horas",
+  level = "Beginner",
+  duration = "8 hours",
 }: CourseCardProps) {
   const discount = originalPrice
     ? Math.round(((originalPrice - price) / originalPrice) * 100)
@@ -54,11 +51,11 @@ export default function CourseCard({
 
   const getLevelColor = () => {
     switch (level) {
-      case "Principiante":
+      case "Beginner":
         return "bg-green-100 text-green-800";
-      case "Intermedio":
+      case "Intermediate":
         return "bg-blue-100 text-blue-800";
-      case "Avanzado":
+      case "Advanced":
         return "bg-purple-100 text-purple-800";
       default:
         return "bg-gray-100 text-gray-800";
@@ -69,12 +66,14 @@ export default function CourseCard({
     <Card className="overflow-hidden transition-all duration-300 h-full flex flex-col p-0 pb-4">
       <div className="relative">
         <Image
-          src={image || cover}
+          src={cover || "/img/courses/course-cover.webp"}
+          width={600}
+          height={400}
           alt={title}
           className="w-full h-48 object-cover transition-transform duration-300"
         />
         {discount > 0 && (
-          <Badge className="absolute top-2 right-2 bg-red-500 hover:bg-red-600">
+          <Badge className="absolute top-2 right-2 bg-card text-card-foreground">
             {discount}% descuento
           </Badge>
         )}
@@ -90,9 +89,9 @@ export default function CourseCard({
           </div>
         </div>
         <CardTitle className="text-lg mt-2">{title}</CardTitle>
-        <CardDescription className="line-clamp-2 text-sm">
+        {/* <CardDescription className="line-clamp-2 text-sm">
           {description}
-        </CardDescription>
+        </CardDescription> */}
       </CardHeader>
       <CardContent className="pb-2 flex-grow">
         <div className="flex items-center gap-2 mb-2">
@@ -108,12 +107,14 @@ export default function CourseCard({
           </span>
         </div>
         <div className="flex items-center gap-2 text-sm text-muted-foreground">
+          <Clock
+            className="size-4 fill-muted-foreground mr-1"
+            color="currentColor"
+          />
           <span>{duration}</span>
-          <span>•</span>
-          <span>{category}</span>
         </div>
       </CardContent>
-      <CardFooter className="pt-2 flex justify-between items-center">
+      <CardFooter className="pt-2 flex flex-wrap justify-between items-center">
         <div>
           <div className="flex items-center gap-2">
             <span className="text-lg font-bold">

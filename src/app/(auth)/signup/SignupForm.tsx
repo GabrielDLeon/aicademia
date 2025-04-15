@@ -8,27 +8,17 @@ import { Button } from "@/components/ui/button";
 import { AppleLogo } from "@phosphor-icons/react";
 import { GoogleLogo } from "@phosphor-icons/react";
 import { MetaLogo } from "@phosphor-icons/react";
+import { signup } from "../login/actions";
 
 export function SignupForm({
     className,
     ...props
 }: React.ComponentProps<"div">) {
     const [formData, setFormData] = useState({
-        username: "",
+        firt: "",
         email: "",
         password: "",
     });
-
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        const { name, value } = e.target;
-        setFormData({ ...formData, [name]: value });
-    };
-
-    const handleSubmit = (e: React.FormEvent) => {
-        e.preventDefault();
-        console.log("Form Data:", formData);
-        // Aquí puedes manejar el envío del formulario
-    };
 
     return (
         <div
@@ -50,6 +40,7 @@ export function SignupForm({
                                 <Input
                                     id="email"
                                     type="email"
+                                    name="email"
                                     placeholder="m@example.com"
                                     required
                                 />
@@ -62,9 +53,14 @@ export function SignupForm({
                                         className="ml-auto text-sm underline-offset-2 hover:underline hover:text-primary"
                                     ></a>
                                 </div>
-                                <Input id="password" type="password" required />
+                                <Input
+                                    id="password"
+                                    name="password"
+                                    type="password"
+                                    required
+                                />
                             </div>
-                            <div className="grid gap-2">
+                            {/* <div className="grid gap-2">
                                 <div className="flex items-center">
                                     <Label htmlFor="confirmPassword">
                                         Confirm Password
@@ -75,8 +71,11 @@ export function SignupForm({
                                     ></a>
                                 </div>
                                 <Input id="password" type="password" required />
-                            </div>
-                            <Button type="submit" className="w-full text-md">
+                            </div> */}
+                            <Button
+                                formAction={signup}
+                                className="w-full text-md"
+                            >
                                 Sign Up
                             </Button>
                             <div className="relative text-center text-sm after:absolute after:inset-0 after:top-1/2 after:z-0 after:flex after:items-center after:border-t after:border-border">

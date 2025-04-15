@@ -8,6 +8,8 @@ import { AppleLogo } from "@phosphor-icons/react";
 import { GoogleLogo } from "@phosphor-icons/react";
 import { MetaLogo } from "@phosphor-icons/react";
 
+import { login } from "../login/actions";
+
 export function LoginForm({
     className,
     ...props
@@ -34,6 +36,7 @@ export function LoginForm({
                                 <Label htmlFor="email">Email</Label>
                                 <Input
                                     id="email"
+                                    name="email"
                                     type="email"
                                     placeholder="m@example.com"
                                     required
@@ -49,9 +52,17 @@ export function LoginForm({
                                         Forgot your password?
                                     </a>
                                 </div>
-                                <Input id="password" type="password" required />
+                                <Input
+                                    id="password"
+                                    name="password"
+                                    type="password"
+                                    required
+                                />
                             </div>
-                            <Button type="submit" className="w-full text-md">
+                            <Button
+                                formAction={login}
+                                className="w-full text-md"
+                            >
                                 Login
                             </Button>
                             <div className="relative text-center text-sm after:absolute after:inset-0 after:top-1/2 after:z-0 after:flex after:items-center after:border-t after:border-border">

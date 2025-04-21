@@ -1,130 +1,130 @@
 [
-  {
-    "id": "1",
-    "title": "Introduction to Web Programming",
-    "description": "Learn the fundamentals of HTML, CSS, and JavaScript to create interactive websites from scratch.",
-    "cover": "/img/courses/course-cover.webp",
-    "instructor": {
-      "name": "María González",
-      "avatar": "/placeholder.svg?height=40&width=40"
+    {
+        "id": "1",
+        "title": "Introduction to Web Programming",
+        "description": "Learn the fundamentals of HTML, CSS, and JavaScript to create interactive websites from scratch.",
+        "cover": "/img/courses/course-cover.webp",
+        "instructor": {
+            "name": "María González",
+            "avatar": "https://i.pravatar.cc/150?u=5"
+        },
+        "price": 49.99,
+        "originalPrice": 99.99,
+        "rating": 4.7,
+        "category": "Web Development",
+        "level": "Beginner",
+        "duration": "8 hours"
     },
-    "price": 49.99,
-    "originalPrice": 99.99,
-    "rating": 4.7,
-    "category": "Web Development",
-    "level": "Beginner",
-    "duration": "8 hours"
-  },
-  {
-    "id": "2",
-    "title": "Advanced React.js",
-    "description": "Master React with hooks, context API, and advanced development patterns for modern applications.",
-    "cover": "/img/courses/react-cover.webp",
-    "instructor": {
-      "name": "Carlos Rodríguez",
-      "avatar": "/placeholder.svg?height=40&width=40"
+    {
+        "id": "2",
+        "title": "Advanced React.js",
+        "description": "Master React with hooks, context API, and advanced development patterns for modern applications.",
+        "cover": "/img/courses/react-cover.webp",
+        "instructor": {
+            "name": "Carlos Rodríguez",
+            "avatar": "https://i.pravatar.cc/150?u=5"
+        },
+        "price": 79.99,
+        "originalPrice": 129.99,
+        "rating": 4.9,
+        "category": "Frontend Development",
+        "level": "Advanced",
+        "duration": "12 hours"
     },
-    "price": 79.99,
-    "originalPrice": 129.99,
-    "rating": 4.9,
-    "category": "Frontend Development",
-    "level": "Advanced",
-    "duration": "12 hours"
-  },
-  {
-    "id": "3",
-    "title": "UX/UI Design for Beginners",
-    "description": "Learn to create attractive user interfaces and effective user experiences with modern tools.",
-    "cover": "/img/courses/figma-cover.webp",
-    "instructor": {
-      "name": "Ana Martínez",
-      "avatar": "/placeholder.svg?height=40&width=40"
+    {
+        "id": "3",
+        "title": "UX/UI Design for Beginners",
+        "description": "Learn to create attractive user interfaces and effective user experiences with modern tools.",
+        "cover": "/img/courses/figma-cover.webp",
+        "instructor": {
+            "name": "Ana Martínez",
+            "avatar": "https://i.pravatar.cc/150?u=5"
+        },
+        "price": 59.99,
+        "originalPrice": 89.99,
+        "rating": 4.5,
+        "category": "Design",
+        "level": "Beginner",
+        "duration": "10 hours"
     },
-    "price": 59.99,
-    "originalPrice": 89.99,
-    "rating": 4.5,
-    "category": "Design",
-    "level": "Beginner",
-    "duration": "10 hours"
-  },
-  {
-    "id": "4",
-    "title": "Python for Data Science",
-    "description": "Master Python and its main libraries for data analysis, visualization, and machine learning.",
-    "cover": "/img/courses/python-cover.webp",
-    "instructor": {
-      "name": "Javier López",
-      "avatar": "/placeholder.svg?height=40&width=40"
+    {
+        "id": "4",
+        "title": "Python for Data Science",
+        "description": "Master Python and its main libraries for data analysis, visualization, and machine learning.",
+        "cover": "/img/courses/python-cover.webp",
+        "instructor": {
+            "name": "Javier López",
+            "avatar": "https://i.pravatar.cc/150?u=5"
+        },
+        "price": 69.99,
+        "originalPrice": 119.99,
+        "rating": 4.8,
+        "category": "Data Science",
+        "level": "Intermediate",
+        "duration": "15 hours"
     },
-    "price": 69.99,
-    "originalPrice": 119.99,
-    "rating": 4.8,
-    "category": "Data Science",
-    "level": "Intermediate",
-    "duration": "15 hours"
-  },
-  {
-    "id": "5",
-    "title": "Astro 5: Build Modern Websites with the Component-First Approach",
-    "description": "Learn the fundamentals and advanced features of Astro 5 to build fast, content-focused websites using its innovative component-first architecture.",
-    "cover": "/img/courses/astro-cover.webp",
-    "instructor": {
-      "name": "Alexandre Dubois",
-      "avatar": "/placeholder.svg?height=40&width=40"
+    {
+        "id": "5",
+        "title": "Astro 5: Build Modern Websites with the Component-First Approach",
+        "description": "Learn the fundamentals and advanced features of Astro 5 to build fast, content-focused websites using its innovative component-first architecture.",
+        "cover": "/img/courses/astro-cover.webp",
+        "instructor": {
+            "name": "Alexandre Dubois",
+            "avatar": "https://i.pravatar.cc/150?u=5"
+        },
+        "price": 59.99,
+        "originalPrice": 99.99,
+        "rating": 4.8,
+        "category": "Web Development",
+        "level": "Intermediate",
+        "duration": "10 hours"
     },
-    "price": 59.99,
-    "originalPrice": 99.99,
-    "rating": 4.8,
-    "category": "Web Development",
-    "level": "Intermediate",
-    "duration": "10 hours"
-  },
-  {
-    "id": "6",
-    "title": "Cloud Computing with AWS",
-    "description": "Get started with Amazon Web Services (AWS) and learn about its core services for computing, storage, and networking.",
-    "cover": "/img/courses/aws-cover.webp",
-    "instructor": {
-      "name": "Diego Sánchez",
-      "avatar": "/placeholder.svg?height=40&width=40"
+    {
+        "id": "6",
+        "title": "Cloud Computing with AWS",
+        "description": "Get started with Amazon Web Services (AWS) and learn about its core services for computing, storage, and networking.",
+        "cover": "/img/courses/aws-cover.webp",
+        "instructor": {
+            "name": "Diego Sánchez",
+            "avatar": "https://i.pravatar.cc/150?u=5"
+        },
+        "price": 89.99,
+        "originalPrice": 149.99,
+        "rating": 4.8,
+        "category": "Cloud Computing",
+        "level": "Intermediate",
+        "duration": "14 hours"
     },
-    "price": 89.99,
-    "originalPrice": 149.99,
-    "rating": 4.8,
-    "category": "Cloud Computing",
-    "level": "Intermediate",
-    "duration": "14 hours"
-  },
-  {
-    "id": "7",
-    "title": "Next.js 14: From Fundamentals to Advanced",
-    "description": "Master Next.js 14, including the App Router, server components, data fetching, and advanced techniques for building modern, performant React applications.",
-    "cover": "/img/courses/nextjs-cover.webp",
-    "instructor": {
-      "name": "Eleanor Vance",
-      "avatar": "/placeholder.svg?height=40&width=40"
+    {
+        "id": "7",
+        "title": "Next.js 14: From Fundamentals to Advanced",
+        "description": "Master Next.js 14, including the App Router, server components, data fetching, and advanced techniques for building modern, performant React applications.",
+        "cover": "/img/courses/nextjs-cover.webp",
+        "instructor": {
+            "name": "Eleanor Vance",
+            "avatar": "https://i.pravatar.cc/150?u=5"
+        },
+        "price": 79.99,
+        "originalPrice": 129.99,
+        "rating": 4.9,
+        "category": "Web Development",
+        "level": "Advanced",
+        "duration": "12 hours"
     },
-    "price": 79.99,
-    "originalPrice": 129.99,
-    "rating": 4.9,
-    "category": "Web Development",
-    "level": "Advanced",
-    "duration": "12 hours"
-  },
-  {
-    "id": "8",
-    "title": "Advanced Web Development: Full-Stack Mastery",
-    "description": "Dive deep into advanced web development, mastering modern full-stack techniques with Node.js, React, GraphQL, and database technologies. Build scalable, high-performance web applications and APIs.",
-    "cover": "/img/courses/course-cover.webp",
-    "instructor": {
-      "name": "Alex Johnson",
-      "avatar": "/placeholder.svg?height=40&width=40"
-    },
-    "price": 99.99,
-    "originalPrice": 149.99,
-    "rating": 4.8,
-    "category": "Web Development",
-    "level": "Advanced",
-    "duration": "16 hours"
-  }
+    {
+        "id": "8",
+        "title": "Advanced Web Development: Full-Stack Mastery",
+        "description": "Dive deep into advanced web development, mastering modern full-stack techniques with Node.js, React, GraphQL, and database technologies. Build scalable, high-performance web applications and APIs.",
+        "cover": "/img/courses/course-cover.webp",
+        "instructor": {
+            "name": "Alex Johnson",
+            "avatar": "https://i.pravatar.cc/150?u=5"
+        },
+        "price": 99.99,
+        "originalPrice": 149.99,
+        "rating": 4.8,
+        "category": "Web Development",
+        "level": "Advanced",
+        "duration": "16 hours"
+    }
 ]

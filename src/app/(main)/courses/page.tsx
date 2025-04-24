@@ -1,11 +1,29 @@
-import courses from "@/app/data/courses-placeholder.json";
 import CourseCard from "@/app/components/CourseCard";
+import { createClient } from "@/app/lib/supabase/client";
 
-export default function CoursesCatalogPage() {
+export default async function CoursesCatalogPage() {
+  const { data: courses } = await createClient()
+    .from("courses")
+    .select(
+      `slug, title, description, level, price, original_price, rating, duration, created_at, updated_at, start_date, end_date, language, cover_image, instructor(first_name, last_name, avatar)`
+    );
+
+  if (!courses) {
+    return <p>No posts found.</p>;
+  }
+
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+    <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-4">
       {courses.map((course) => (
-        <CourseCard key={course.id} {...course} />
+        <CourseCard
+          key={course.slug}
+          {...course}
+          instructor={{
+            name: `${course.instructor.first_name} ${course.instructor.last_name}`,
+            avatar: course.instructor.avatar,
+          }}
+          originalPrice={course.original_price}
+        />
       ))}
     </div>
   );

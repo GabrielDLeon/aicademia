@@ -1,56 +1,35 @@
 "use server";
 
-import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
-
-import { createClient } from "@/app/lib/supabase/server";
+import { revalidatePath } from "next/cache";
+import createClient from "@/app/lib/supabase/server";
 
 export async function login(formData: FormData) {
     const supabase = await createClient();
 
-    // type-casting here for convenience
-    // in practice, you should validate your inputs
     const data = {
         email: formData.get("email") as string,
         password: formData.get("password") as string,
     };
 
-    const { error } = await supabase.auth.signInWithPassword(data);
+    // Intentar iniciar sesión
+    const { data: user, error } = await supabase.auth.signInWithPassword({
+        email: data.email,
+        password: data.password,
+    });
 
+    // Manejar error de autenticación
     if (error) {
-        redirect("/error");
+        console.error(error.message); // Aquí puedes manejar el error más específicamente
+        return redirect("/error"); // O redirigir a una página de error
     }
 
-    revalidatePath("/", "layout");
-    redirect("/courses");
-}
+    // Validar si el login fue exitoso
+    if (user) {
+        // Revalidar caché para asegurarnos de que la sesión esté actualizada
+        revalidatePath("/");
 
-export async function signup(formData: FormData) {
-    const supabase = await createClient();
-
-    // type-casting here for convenience
-    // in practice, you should validate your inputs
-    const data = {
-        email: formData.get("email") as string,
-        password: formData.get("password") as string,
-        options: {
-            // data: {
-            //     first_name: formData.get("firstName"),
-            //     last_name: formData.get("lastName"),
-            // },
-            data: {
-                first_name: "Damian",
-                last_name: "Viera",
-            },
-        },
-    };
-
-    const { error } = await supabase.auth.signUp(data);
-
-    if (error) {
-        redirect("/error");
+        // Redirigir a la página principal o dashboard
+        return redirect("/courses");
     }
-
-    revalidatePath("/", "layout");
-    redirect("/");
 }

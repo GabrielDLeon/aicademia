@@ -5,6 +5,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import { ThemeProvider } from "@/components/theme-provider";
 import { PhosphorProvider } from "@/components/icon-provider";
+import { AuthProvider } from "@/components/auth-provider";
 
 const geistSans = Geist({
     variable: "--font-geist-sans",
@@ -37,11 +38,13 @@ export default function RootLayout({
                     enableSystem
                     disableTransitionOnChange
                 >
-                    <PhosphorProvider>
-                        <Header />
-                        <main>{children}</main>
-                        <Footer />
-                    </PhosphorProvider>
+                    <AuthProvider>
+                        <PhosphorProvider>
+                            <Header />
+                            <main>{children}</main>
+                            <Footer />
+                        </PhosphorProvider>
+                    </AuthProvider>
                 </ThemeProvider>
             </body>
         </html>

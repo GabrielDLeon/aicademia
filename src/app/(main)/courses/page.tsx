@@ -1,8 +1,12 @@
 import CourseCard from "@/app/components/CourseCard";
 import { createClient } from "@/app/lib/supabase/client";
 
+const BUCKET_PATH =
+  "https://urnfpvprkcyyxfphqeln.supabase.co/storage/v1/object/public/aicademia-public/";
+
 export default async function CoursesCatalogPage() {
-  const { data: courses } = await createClient()
+  const supabase = await createClient();
+  const { data: courses } = await supabase
     .from("courses")
     .select(
       `slug, title, description, level, price, original_price, rating, duration, created_at, updated_at, start_date, end_date, language, cover_image, instructor(first_name, last_name, avatar)`
@@ -17,6 +21,7 @@ export default async function CoursesCatalogPage() {
       {courses.map((course) => (
         <CourseCard
           key={course.slug}
+          cover={`${BUCKET_PATH}${course.cover_image}`}
           {...course}
           instructor={{
             name: `${course.instructor.first_name} ${course.instructor.last_name}`,

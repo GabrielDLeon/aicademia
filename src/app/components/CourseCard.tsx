@@ -17,7 +17,6 @@ import Link from "next/link";
 interface CourseCardProps {
   slug: string;
   title: string;
-  description: string;
   cover?: string;
   instructor: {
     name: string;

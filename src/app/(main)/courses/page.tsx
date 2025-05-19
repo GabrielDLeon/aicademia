@@ -9,7 +9,7 @@ export default async function CoursesCatalogPage() {
   const { data: courses } = await supabase
     .from("courses")
     .select(
-      `slug, title, description, level, price, original_price, rating, duration, created_at, updated_at, start_date, end_date, language, cover_image, instructor(first_name, last_name, avatar)`
+      `slug, title, level, price, original_price, rating, duration, created_at, updated_at, start_date, end_date, language, cover_image, instructor(first_name, last_name, avatar)`
     );
 
   if (!courses) {
